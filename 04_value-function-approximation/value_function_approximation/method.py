@@ -95,6 +95,8 @@ class Sarsa(Solver):
     def __init__(self, r: int, c: int, ord):
         super(Sarsa, self).__init__(r, c)
         self.ord = ord  # 傅里叶级数阶数
+
+        #self.w即为参数矩阵，其阶数由傅里叶级数ord决定
         self.w = np.random.randn(1, (ord+1)**3) * 0.001  # 权重初始化
 
     def get_feature(self, state, action):
